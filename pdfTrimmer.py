@@ -10,10 +10,10 @@ unit = 72/25.4
 # A4 = 210mm x 297mm
 # A5 = 148mm x 210mm
 # 紙の原点は左下、単位は[mm]
-Left  = 98 #210/2-148/2
+Left  = 99 #210/2-148/2
 Right = 127 #210/2+148/2
 Lower = 265 #297/2-210/2
-Upper = 278 #297/2+210/2
+Upper = 277 #297/2+210/2
 
 # トリミング
 for i in range(input_pdf.getNumPages()):

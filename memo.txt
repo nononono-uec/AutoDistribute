@@ -1,0 +1,10 @@
+from PIL import Image
+import pyocr
+import os
+from pathlib import Path
+
+# この辺りに追記
+pyocr.tesseract.TESSERACT_CMD = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+poppler_dir = Path(__file__).parent.absolute() / "poppler/Library/bin"
+os.environ["PATH"] += os.pathsep + str(poppler_dir)
