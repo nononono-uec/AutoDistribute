@@ -1,4 +1,0 @@
-from PIL import Image
-import pyocr
-
-pyocr.tesseract.TESSERACT_CMD = r'C:\Users\Amano\Documents\home\Python\AutoDistribute\Tesseract-OCR\tesseract.exe'

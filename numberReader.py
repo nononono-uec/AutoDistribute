@@ -4,20 +4,18 @@ import pyocr
 import pyocr.builders
 import sys
 from glob import glob
-import numpy as np
-from matplotlib import pylab as plt
 
 # Tesseract実行ファイルのパス
 pyocr.tesseract.TESSERACT_CMD = r'C:\Users\Amano\Documents\home\Python\AutoDistribute\Tesseract-OCR\tesseract.exe'
 # 切り抜く長方形の座標。左上が原点で、左、上、右、下の順。単位はミリ
-kirinuki = [98, 20, 126, 31]
+kirinuki = [98, 19, 127, 32]
 # ミリからピクセルへ変換する用の比例定数
-dpi = 200 # スキャナによって変える
+dpi = 300 # スキャナによって変える
 left, upper, right, lowwer = [dpi * i / 25.4 for i in kirinuki]
 
 file_path = 'Materials/'
 # 読み込むファイルリスト作成
-file_list = [file for file in glob(f'{file_path}*.png')] # 拡張子に注意
+file_list = [file for file in glob(f'{file_path}*.png')] # 拡張子に注意。jpgも出来た
 for file_path in file_list:
     # ツール読み込み
     tools = pyocr.get_available_tools()
@@ -44,7 +42,7 @@ for file_path in file_list:
     max_medals_img.save("numHoge.png")
 
     # OCR
-    max_medals = tool.image_to_string(max_medals_img, lang='eng', builder=pyocr.builders.DigitBuilder(tesseract_layout=8))
+    max_medals = tool.image_to_string(max_medals_img, lang='eng', builder=pyocr.builders.DigitBuilder(tesseract_layout=6))
     # 数値以外の文字を除去
     max_medals = re.sub(r'\D', '', max_medals)
     print(f'{max_medals}')
