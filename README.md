@@ -7,6 +7,10 @@
 1. 学籍番号の領域だけ切り取って、拡大、白黒に二値化
 2. Tesseract で学籍番号を読み取って、学籍番号に対応するフォルダのパスに画像をコピー
 
+# メモ
+1. Tesseract-OCR を別途ダウンロード必要。"python-Package.txt"にある python パッケージのインストールも必要
+2. Tesseract をダウンロードしても、無理にPCの環境変数"Path"に加える必要はない。python のコードにTesseract のパスを書けばOK
+
 # 参考にしたURLページ
 1. 画像を切り抜いて英字を読み取る - https://qiita.com/d_m/items/4690aa9f03bb13bf1d21
 2. Tesseract エンジンの精度を高める - https://qiita.com/ku_a_i/items/93fdbd75edacb34ec610
