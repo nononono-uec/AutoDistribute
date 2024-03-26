@@ -7,7 +7,8 @@ from glob import glob
 import os
 
 # Tesseract実行ファイルのパス
-pyocr.tesseract.TESSERACT_CMD = r'C:\Users\Amano\Documents\home\Python\AutoDistribute\Tesseract-OCR\tesseract.exe'
+# pyocr.tesseract.TESSERACT_CMD = r'C:\Users\Amano\Documents\home\Python\AutoDistribute\Tesseract-OCR\tesseract.exe'
+pyocr.tesseract.TESSERACT_CMD = r'C:\Users\dmura\Documents\home\Programming\AutoDistribute\Tesseract-OCR\tesseract.exe'
 
 i = 1
 file_path = 'Tesseract-testMaterials/'

@@ -6,7 +6,9 @@ import sys
 from glob import glob
 
 # Tesseract実行ファイルのパス
-pyocr.tesseract.TESSERACT_CMD = r'C:\Users\Amano\Documents\home\Python\AutoDistribute\Tesseract-OCR\tesseract.exe'
+# pyocr.tesseract.TESSERACT_CMD = r'C:\Users\Amano\Documents\home\Python\AutoDistribute\Tesseract-OCR\tesseract.exe'
+pyocr.tesseract.TESSERACT_CMD = r'C:\Users\dmura\Documents\home\Programming\AutoDistribute\Tesseract-OCR\tesseract.exe'
+
 # 切り抜く長方形の座標。左上が原点で、左、上、右、下の順。単位はミリ
 kirinuki = [98, 19, 127, 32]
 # ミリからピクセルへ変換する用の比例定数
@@ -42,7 +44,7 @@ for file_path in file_list:
     max_medals_img.save("numHoge.png")
 
     # OCR
-    max_medals = tool.image_to_string(max_medals_img, lang='eng', builder=pyocr.builders.DigitBuilder(tesseract_layout=6))
+    max_medals = tool.image_to_string(max_medals_img, lang='eng', builder=pyocr.builders.DigitBuilder(tesseract_layout=8))
     # 数値以外の文字を除去
     max_medals = re.sub(r'\D', '', max_medals)
     print(f'{max_medals}')

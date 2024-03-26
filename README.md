@@ -7,6 +7,21 @@
 1. 学籍番号の領域だけ切り取って、拡大、白黒に二値化
 2. Tesseract で学籍番号を読み取って、学籍番号に対応するフォルダのパスに画像をコピー
 
+# 実行方法（多分）
+1. Tesseract、Python をインストール
+2. 好きな場所で Python の仮想環境を作って、パッケージをインストール
+    ```
+    # コマンドライン か Windows PowerShellにて
+    
+    Set-Executionpolicy RemoteSigned -Scope CurrentUser 
+    python -m venv ImaginaryEnvironment
+    ImaginaryEnvironment/Scripts/Activate.ps1
+    pip install -r python-Package.txt
+
+    deactivate # 仮想環境を無効にしたい時
+    ```
+3. 各Pythonファイルの Tesseract のパスを書き換えて、実行
+
 # メモ
 1. Tesseract-OCR を別途ダウンロード必要。"python-Package.txt"にある python パッケージのインストールも必要
 2. Tesseract をダウンロードしても、無理にPCの環境変数"Path"に加える必要はない。python のコードにTesseract のパスを書けばOK
